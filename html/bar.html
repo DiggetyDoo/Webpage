@@ -59,8 +59,8 @@
             vegaEmbed('#vis', vlSpec, {"actions": false});
         }
 
-        // Fetch and parse data
-        fetch('age.json')
+        // Fetch and parse data 
+        fetch('./age.json')
         .then(response => response.json())
         .then(data => {
             originalData = data;
