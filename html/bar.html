@@ -13,12 +13,11 @@
     <div class="center-container">
         <div id="vis"></div> <!-- Visualization container -->
         <div id="slider-container">
-            <input type="range" min="0" max="100" value="50" id="myRange">
+            <input type="range" min="0" max="100" value="50" id="myRange" step="1">
             <span id="slider-value">50</span> <!-- Default value displayed next to slider -->
         </div>
     </div>
     
-
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -33,7 +32,7 @@
         };
 
         function filterDataByRating(rating) {
-            return originalData.filter(function(d) { return d.overall > rating; });
+            return originalData.filter(function(d) { return d.overall > parseInt(rating); });
         }
 
         function updateChart(value) {
@@ -45,13 +44,23 @@
                 "encoding": {
                     "x": {"field": "age", "type": "ordinal", "bin": {"maxbins": 30}},
                     "y": {"aggregate": "count", "type": "quantitative"}
+                },
+                "width": 600,
+                "height": 400,
+                "title": {
+                    "text": `Distribution of Individuals by Age Group (Overall > ${value})`,
+                    "fontSize": 20,
+                    "subtitle": [`Only considering overall rating > ${value}`],
+                    "subtitleFontSize": 15,
+                    "color": "black",
+                    "subtitleColor": "gray"
                 }
             };
-            vegaEmbed('#vis', vlSpec);
+            vegaEmbed('#vis', vlSpec, {"actions": false});
         }
 
-        let originalData = [];
-        fetch('data.json')
+        // Fetch and parse data
+        fetch('age.json')
         .then(response => response.json())
         .then(data => {
             originalData = data;
