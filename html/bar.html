@@ -22,6 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script>
+        var originalData;
         var slider = document.getElementById("myRange");
         var sliderValueDisplay = document.getElementById("slider-value");
         sliderValueDisplay.textContent = slider.value; // Set initial slider value
@@ -59,14 +60,19 @@
             vegaEmbed('#vis', vlSpec, {"actions": false});
         }
 
-        // Fetch and parse data 
         fetch('./age.json')
-        .then(response => response.json())
-        .then(data => {
-            originalData = data;
-            updateChart(slider.value); // Initialize chart
-        })
-        .catch(error => console.error('Error loading or parsing data:', error));
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        originalData = data;
+        updateChart(slider.value); // Initialize chart
+    })
+   
+
     </script>
 </body>
 </html>
