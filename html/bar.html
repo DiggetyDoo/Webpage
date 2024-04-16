@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Age Distribution Chart</title>
+    <link href="style2.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Age Distribution Analysis</h1>
+        <p>Explore the age distribution across different demographics using the interactive slider below.</p>
+    </header>
+    <div class="center-container">
+        <div id="vis"></div> <!-- Visualization container -->
+        <div id="slider-container">
+            <input type="range" min="0" max="100" value="50" id="myRange">
+            <span id="slider-value">50</span> <!-- Default value displayed next to slider -->
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script>
+        var slider = document.getElementById("myRange");
+        var sliderValueDisplay = document.getElementById("slider-value");
+        sliderValueDisplay.textContent = slider.value; // Set initial slider value
+
+        slider.oninput = function() {
+            sliderValueDisplay.textContent = this.value; // Update display value
+            updateChart(this.value); // Update chart when slider value changes
+        };
+
+        function filterDataByRating(rating) {
+            return originalData.filter(function(d) { return d.overall > rating; });
+        }
+
+        function updateChart(value) {
+            var filteredData = filterDataByRating(value);
+            var vlSpec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "data": { "values": filteredData },
+                "mark": "bar",
+                "encoding": {
+                    "x": {"field": "age", "type": "ordinal", "bin": {"maxbins": 30}},
+                    "y": {"aggregate": "count", "type": "quantitative"}
+                }
+            };
+            vegaEmbed('#vis', vlSpec);
+        }
+
+        let originalData = [];
+        fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            originalData = data;
+            updateChart(slider.value); // Initialize chart
+        })
+        .catch(error => console.error('Error loading or parsing data:', error));
+    </script>
+</body>
+</html>

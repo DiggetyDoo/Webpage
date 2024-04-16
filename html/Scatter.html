@@ -1,0 +1,171 @@
+ <!--Set Up-->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Player search</title>
+    <link href="style2.css" rel="stylesheet" >
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+  </head>
+  <body>
+    <h1>Player search</h1>
+    <img src = "images/scout.png" alt="scout" />
+    <h2>Background</h2>
+    <p>
+      When signing a player a manager must consider the player's talent, potential, and other external factors as signing 
+      a player can cost soccer clubs millions of dollars throughout the process. Making each player research and signing 
+      efficiency critical for managers to consider in the investment process. In this player search, we plan to show player
+      distribution against their release clauses, as well as, show their composition in terms of 
+      pace, shooting, passing, dribbling, defending and physic.
+
+    </p>
+
+  </div>
+  <h3><strong> Find our scatter plot of each position below</strong></h3>
+  <ul>
+    <li> Striker</li>
+    <button id = 'navigateButton1'> Striker</button>
+
+    <script>
+        const navigateButton1 = document.getElementById("navigateButton1");
+        navigateButton1.addEventListener('click', function(){
+            window.location.href = 'scatter_ST.html';
+        })
+    </script>
+    <li> Center Attacking Midfielder</li>
+    <button id = 'navigateButton2'> Center Attacking Midfielder </button>
+
+    <script>
+        const navigateButton2 = document.getElementById("navigateButton2");
+        navigateButton2.addEventListener('click', function(){
+            window.location.href = 'scatter_CAM.html';
+        })
+    </script>
+    <li> Center Defending Midfielder</li>
+    <button id = 'navigateButton3'> Center Defending Midfielder </button>
+
+    <script>
+        const navigateButton3 = document.getElementById("navigateButton3");
+        navigateButton3.addEventListener('click', function(){
+            window.location.href = 'scatter_CDM.html';
+        })
+    </script>
+    <li> Center Field</li>
+    <button id = 'navigateButton4'> Center Field </button>
+
+    <script>
+        const navigateButton4 = document.getElementById("navigateButton4");
+        navigateButton4.addEventListener('click', function(){
+            window.location.href = 'scatter_CF.html';
+        })
+    </script>
+    <li> Center Midfielder</li>
+    <button id = 'navigateButton5'> Center Midfielder </button>
+
+    <script>
+        const navigateButton5 = document.getElementById("navigateButton5");
+        navigateButton5.addEventListener('click', function(){
+            window.location.href = 'scatter_CM.html';
+        })
+    </script>
+    <li> Left Back</li>
+    <button id = 'navigateButton6'> Left Back</button>
+
+    <script>
+        const navigateButton6 = document.getElementById("navigateButton6");
+        navigateButton6.addEventListener('click', function(){
+            window.location.href = 'scatter_LB.html';
+        })
+    </script>
+    <li> Left Midfielder</li>
+    <button id = 'navigateButton7'> Left Midfielder </button>
+
+    <script>
+        const navigateButton7 = document.getElementById("navigateButton7");
+        navigateButton7.addEventListener('click', function(){
+            window.location.href = 'scatter_LM.html';
+        })
+    </script>
+    <li> Left Wing</li>
+    <button id = 'navigateButton8'> Left Wing</button>
+
+    <script>
+        const navigateButton8 = document.getElementById("navigateButton8");
+        navigateButton8.addEventListener('click', function(){
+            window.location.href = 'scatter_LW.html';
+        })
+    </script>
+    <li> Left Wing Back</li>
+    <button id = 'navigateButton9'> Left Wing Back</button>
+
+    <script>
+        const navigateButton9 = document.getElementById("navigateButton9");
+        navigateButton9.addEventListener('click', function(){
+            window.location.href = 'scatter_LWB.html';
+        })
+    </script>
+
+    <li> Right Back</li>
+    <button id = 'navigateButton10'> Right Back</button>
+
+    <script>
+        const navigateButton10 = document.getElementById("navigateButton10");
+        navigateButton10.addEventListener('click', function(){
+            window.location.href = 'scatter_RB.html';
+        })
+    </script>
+
+    <li> Right Mid</li>
+    <button id = 'navigateButton11'> Right Mid</button>
+
+    <script>
+        const navigateButton11 = document.getElementById("navigateButton11");
+        navigateButton11.addEventListener('click', function(){
+            window.location.href = 'scatter_RM.html';
+        })
+    </script>
+
+    <li> Right Wing</li>
+    <button id = 'navigateButton12'> Right Wing</button>
+
+    <script>
+        const navigateButton12 = document.getElementById("navigateButton12");
+        navigateButton12.addEventListener('click', function(){
+            window.location.href = 'scatter_RW.html';
+        })
+    </script>
+
+    <li> Right Back Wing</li>
+    <button id = 'navigateButton13'> Right Back Wing</button>
+
+    <script>
+        const navigateButton13 = document.getElementById("navigateButton13");
+        navigateButton13.addEventListener('click', function(){
+            window.location.href = 'scatter_RWB.html';
+        })
+    </script>
+
+    <li> Goal Keeper</li>
+    <button id = 'navigateButton14'> Goal Keeper</button>
+
+    <script>
+        const navigateButton14 = document.getElementById("navigateButton14");
+        navigateButton14.addEventListener('click', function(){
+            window.location.href = 'scatter_GK.html';
+        })
+    </script>
+
+    <h3><strong> Findings & Conclusion</strong></h3>
+    <p>The scatter plot can determine potential players that is needed for a specific club and minimum amount of money club 
+        needed to sign the player. Each scatter plot representing each position have different distibution of players and 
+        some players does overlap in the scatter plots showing that some players can play multiple positions. Overall, from our
+        scatter plot we were able  to create a tool to help managers to find potential players with the aligning composition to match 
+        the club's needs to improve. The plot also show that there is high amount of alternative for each position from the 3 leagues 
+        we chose. By providing basic composition metrics of each player and monetary factos like wage and release clause 
+        these visualization can be an effective tool to use for club managers.
+    </p>
+    <h2>Thanks for visiting our club analysis page!!</h2>
+    </body>
+</html>
