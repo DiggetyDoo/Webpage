@@ -60,7 +60,7 @@
             vegaEmbed('#vis', vlSpec, {"actions": false});
         }
 
-        fetch('./age.json')
+        fetch('https://diggetydoo.github.io/Webpage/html/age.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
