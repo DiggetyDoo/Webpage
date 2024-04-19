@@ -3,6 +3,5 @@
 [Click me!](https://diggetydoo.github.io/Webpage/)
 
 ## Link to repo:
-[Click me!](https://diggetydoo.github.io/Webpage/](https://github.com/DiggetyDoo/Webpage)
-
+[Click me!](https://github.com/DiggetyDoo/Webpage)
 Zip file of the most recent push has been submitted to gradescope.
