@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Player search</title>
+    <title>Manager Tools</title>
     <link href="style2.css" rel="stylesheet" >
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -12,30 +12,32 @@
   <body>
     <h1>Manager Tools</h1>
    
-    <h2>BackgroundCHANGE THIS</h2>
+    <h2>Background</h2>
     <p>
-      When signing a player a manager must consider the player's talent, potential, and other external factors as signing 
-      a player can cost soccer clubs millions of dollars throughout the process. Making each player research and signing 
-      efficiency critical for managers to consider in the investment process. In this player search, we plan to show player
-      distribution against their release clauses, as well as, show their composition in terms of 
-      pace, shooting, passing, dribbling, defending and physic.
+    To help managers identify the best players to bring to their team, we created 4 
+    tools that will help provide managers with deep insights into the players transfer market. 
+    Here, managers can find the age and overall rating distribution of players within each league, 
+    player ability based on player search, nationality distribution of players, and player passing ability vs wage.  
+
 
     </p>
-    <h3>Overall Rating distribution filtered by age</h3>
 
-    <button id = 'boxButton'> Plot</button>
-
-    <script>
+    <h3>Find each of our manager tools below!!</h3>
+    <ul>
+       
+    <button id = 'boxButton'> Age and Nationality Distributions</button>
+    
+        <script>
         const boxButton = document.getElementById("boxButton");
         boxButton.addEventListener('click', function(){
             window.location.href = 'bar.html';
         })
-    </script>
+        </script>
+    </ul>
   </div>
-  <h3><strong> Find our scatter plot of each position below</strong></h3>
   <ul>
-    <li> Scatter Plots</li>
-    <button id = 'navigateButton1'> Plots</button>
+ 
+    <button id = 'navigateButton1'> Positional Player Search</button>
 
     <script>
         const navigateButton1 = document.getElementById("navigateButton1");
@@ -43,24 +45,26 @@
             window.location.href = 'scatter.html';
         })
     </script>
-    <li> Passing Score vs Wage Plot</li>
-    <button id = 'navigateButton2'> Plot </button>
+    
+
+    
+
+    <button id = 'navigateButton3'>Passing vs Wage Graph</button>
 
     <script>
-        const navigateButton2 = document.getElementById("navigateButton2");
-        navigateButton2.addEventListener('click', function(){
+        const navigateButton3 = document.getElementById("navigateButton3");
+        navigateButton3.addEventListener('click', function(){
             window.location.href = 'passing_wage.html';
         })
     </script>
-    
+    </ul>
     <h3><strong> Findings & Conclusion</strong></h3>
-    <p>The scatter plot can determine potential players that is needed for a specific club and minimum amount of money club 
-        needed to sign the player. Each scatter plot representing each position have different distibution of players and 
-        some players does overlap in the scatter plots showing that some players can play multiple positions. Overall, from our
-        scatter plot we were able  to create a tool to help managers to find potential players with the aligning composition to match 
-        the club's needs to improve. The plot also show that there is high amount of alternative for each position from the 3 leagues 
-        we chose. By providing basic composition metrics of each player and monetary factos like wage and release clause 
-        these visualization can be an effective tool to use for club managers.
+    <p>
+    Managers can use your tools to find the most suitable player to add to their club 
+    by using our visualizations to identify where they should be looking for a player using 
+    the nationality distribution, find out what age is the most ideal for a player overall rating, then find 
+    the if the club will be able to afford that player's yearly salary and if the player has high passing 
+    capabilities, and search for how much money is needed to sign a player onto a different team. 
     </p>
     <h2>Thanks for visiting our club analysis page!!</h2>
     </body>

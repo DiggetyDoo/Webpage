@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Interactive Age Distribution Chart</title>
-    <link href="style2.css" rel="stylesheet">
-</head>
-<body>
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Nationality</title>
+    <link href="style2.css" rel="stylesheet" >
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+  </head>
+
+  <body>
     <header>
         <h1>Age Distribution Analysis</h1>
-        <p>Explore the age distribution across different demographics using the interactive slider below.</p>
+    
+        <p>Explore the age distribution across different rating scores using the interactive slider below.</p>
     </header>
+    <div id="box">
     <div class="center-container">
         <div id="vis"></div> <!-- Visualization container -->
         <div id="slider-container">
@@ -60,7 +66,7 @@
             vegaEmbed('#vis', vlSpec, {"actions": false});
         }
 
-        fetch('https://diggetydoo.github.io/Webpage/html/age.json')
+        fetch('age.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
@@ -75,14 +81,28 @@
 
     </script>
      </script>
-     <h1>Player Nationality Analysis</h1>
-     <img src="nationality.png" alt="nationalities image" width="400" height="400">
-     <h3><strong> Findings & Conclusion</strong></h3>
- <p>There are many factors when it comes to selecting a player to sign. 
-     This bar graph showing population of professional players within the top 10 countries. 
-     This visualization will help team managers pinpoint potential countries and 
-     regions with high availability of players or seek elsewhere for hidden talent 
-     outside of where most professional soccer players originate from.
+     </div>
+     <h3><strong>Findings and Conclusions</strong></h3>
      <p>
+      One would assume that overall rating drops off as age increases, which holds true for all overall ratings.
+      Interestingly, increasing the overall rating slider increases the average age of the players. This suggests that
+      players are able to improve with dedication and practice, and that experience as well as talent is needed to succeed.
+      <br>
+      It should be noted that these interpretations are based on the assumption that the rating 
+      system is uniformly applied across all ages and that the population distribution across ages 
+      is not influencing the results. Additional data, such as the total number of individuals in each 
+      age group or the nature of what is being rated, would be necessary to draw more definitive conclusions.
+      <p>
+    <h1>Player Nationality Analysis</h1>
+    <img src="nationality.png" alt="nationalities image" width="400" height="400">
+    <h3><strong> Findings & Conclusion</strong></h3>
+  <p>
+    There are many factors when it comes to selecting a player to sign. 
+    This bar graph showing population of professional players within the top 10 countries. 
+    This visualization will help team managers pinpoint potential countries and 
+    regions with high availability of players or seek elsewhere for hidden talent 
+    outside of where most professional soccer players originate from.
+  <p>
+    
 </body>
-</html>
+</html> 
